@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>슈어티비</title>
+  <style>
+    body {
+      margin: 0px;
+      padding: 0px;
+      position: relative;
+      background-color: #141414;
+    }
+
+    img {
+      width: 100%;
+      vertical-align: top;
+    }
+
+
+
+    /* PC 화면에서만 보이도록 스타일링 */
+    .pc-image {
+      display: block;
+    }
+
+    /* 모바일 화면에서만 보이도록 스타일링 */
+    .mobile-image {
+      display: none;
+    }
+
+    /* 모바일 화면에 대한 미디어 쿼리 */
+    @media only screen and (max-width: 1000px) {
+      .pc-image {
+        display: none;
+      }
+
+      .mobile-image {
+        display: block;
+      }
+    }
+  </style>
+  <script src="./js/jquery.min.js"></script>
+  <script src="./js/jquery.rwdImageMaps.min.js"></script>
+  <script src="./js/ios-orientationchange-fix.min.js"></script>
+
+
+  
+</head>
+
+<body>
+  <img class="pc-image" src="dodotv.png" usemap="#image-map1" alt="PC Image">
+
+  <map name="image-map1">
+    <area target="" alt="" title="" href="https://suretv-1.com" coords="659,522,1263,590" shape="rect">
+    <area target="" alt="" title="" href="http://t.me/suretv_vip" coords="662,597,1266,665" shape="rect">
+  </map>
+
+  <img class="mobile-image" src="dodotv mb.png" usemap="#image-map2" alt="Mobile Image">
+
+  <map name="image-map2">
+    <area target="" alt="1" title="" href="http://suretv-1.com" coords="104,830,802,900" shape="rect">
+    <area target="" alt="2" title="" href="http://t.me/suretv_vip" coords="104,920,802,990" shape="rect">
+  </map>
+
+  <script src="chrome-extension://hhojmcideegachlhfgfdhailpfhgknjm/web_accessible_resources/index.js"></script>
+  <script>
+    (function ($) {
+      $(document).ready(function (e) {
+        $('.pc-image').rwdImageMaps();
+        $('.mobile-image').rwdImageMaps();
+      });
+    })(jQuery);
+  </script>
+</body>
+
+</html>
